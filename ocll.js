@@ -15,7 +15,7 @@ algorithms = [
         name: 'Headlights, U',
         wiki: 'https://www.speedsolving.com/wiki/index.php/OLL#OLL_23',
         imgUrl: 'images/headlights.gif',
-        alg: "(Sexy)3 (R' F R F')3"
+        alg: "(Sexy)3 (Sled)3"
     },
     {
         name: 'Sune, S',

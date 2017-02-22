@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OLL edges</title>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="ocll.js"></script>
+</head>
+<body>
+    <h2>2-Look OLL OCLL algorithm flashcards</h2>
+
+    <table>
+        <tr>
+            <td>
+                <img id="ollimg"/>
+            </td>
+            <td>
+                <div>
+                    <input type="checkbox" id="shownamecheckbox" value="show_name">
+                    <label for="shownamecheckbox">Always show name</label>
+                    <br />
+                    <input type="checkbox" id="showalgcheckbox" value="show_alg">
+                    <label for="showalgcheckbox">Always show algorithm</label>
+                    <br />
+
+                    <input type="button" value="Get Random" onclick="showNewState();">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table style="border-spacing: 0.5em 0.4em;">
+        <tr>
+            <td style="text-align: right;">
+                <b>Name</b>
+            </td>
+            <td>
+                <div id="namediv"></div>
+                <input type="button" id="namebutton" 
+                    value="Show" onclick="showName();" />
+            </td>
+        <tr>
+        <tr>
+            <td style="text-align: right;">
+                <b>Algorithm</b>
+            </td>
+            <td>
+                <div id="algdiv"></div>
+                <input type="button" id="algbutton"
+                    value="Show" onclick="showAlg();" />
+            </td>
+        </tr>
+    </table>
+
+    <p>Algorithm note: (Sexy), aka "Sexy move", represents the four moves: <b>R U R' U'</b>. Check out the 
+        <a href="https://www.speedsolving.com/wiki/index.php/Sexy_Move">page</a> on the Speed
+        Solving wiki.
+    </p>
+
+    <h3>About</h3>
+    <p>I made this page to help me study the seven algorithms of the OCLL step of 2-Look OLL for
+        solving rubik's cubes. The Speed Solving wiki page for 2-Look OLL is 
+        <a href="https://www.speedsolving.com/wiki/index.php/2-Look_OLL">here</a>.
+    </p>
+</body>
+</html>

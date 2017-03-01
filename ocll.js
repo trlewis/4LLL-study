@@ -30,7 +30,7 @@ algorithms = [
         alg: "L' U' L U' L' U2 L"
     },
     {
-        name: 'H',
+        name: 'H, Double Sune, Cross',
         wiki: 'https://www.speedsolving.com/wiki/index.php/OLL#OLL_21',
         imgUrl: 'images/h.gif',
         alg: "y F (Sexy)3 F'"
@@ -45,6 +45,32 @@ algorithms = [
 
 algIndex = -1;
 
+//fill out the table containing all algorithms
+$(document).ready(function() {
+    //get the algorithm table ready
+    readyTable();
+    $('#showallbutton').click(function() {
+        $('#allalgstable').toggle();
+    });
+
+    //display an initial algorithm
+    showNewState();
+});
+
+//fills out all the rows in the algorithms table and hides it.
+function readyTable() {
+    $('#allalgstable').toggle();
+    var algCount = algorithms.length;
+    for(var i = 0 ; i < algCount ; i++) {
+        var alg = algorithms[i];
+        var img = '<img src="{0}"/>'.format(alg.imgUrl);
+        var text = '<b><a href="{0}">{1}</a></b><br /><span>{2}</span>'.format(alg.wiki, alg.name, alg.alg);
+        var row = '<tr><td>{0}</td><td>{1}</td></tr>'.format(img, text);
+        $('#allalgstable').append(row);
+    }
+}
+
+//show a different algorithm
 function showNewState() {
     var index = algIndex;
     while(algIndex == index) {
@@ -91,3 +117,15 @@ function getRand(max) {
     var x = Math.floor(Math.random() * max);
     return x;
 }
+
+//should provide a string.format function similar to C#
+String.prototype.format = function() {
+    var s = this;
+    var i = arguments.length;
+
+    while (i--)
+        s = s.replace(new RegExp('\\{' + i + '\\}', 'gm'), arguments[i]);
+
+    return s;
+
+};
